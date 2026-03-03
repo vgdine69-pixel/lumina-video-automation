@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: lumina-youtube-automation
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run dev
+    envVars:
+      - key: VITE_GEMINI_API_KEY
+        sync: false
+      - key: APP_URL
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: NODE_ENV
+        value: production
